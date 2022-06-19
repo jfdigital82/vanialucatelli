@@ -346,7 +346,7 @@ $("#callbackForm").on('submit', function(e) {
         phone: $("#cbPhone").val()
     };
 
-    if ( isValidEmail(data['email']) && (data['name'].length > 1) && isValidPhoneNumber(data['phone']) ) {
+    if (isValidEmail(data['email']) && (data['name'].length > 1) && isValidPhoneNumber(data['phone']) ) {
         $.ajax({
             type: "POST",
             url: "php/callback.php",
@@ -448,6 +448,7 @@ if( $("#dfDate").length ) {
         min: new Date()
     });
 }
+
 
 
 /* ==========================================
@@ -552,6 +553,8 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     document.querySelector('head').appendChild(msViewportStyle);
 }
 
-
+function redirectApiZap(){
+    window.location.href = "https://api.whatsapp.com/send?phone=351961766199&text=Olá gostaria de saber mais informações sobre crédito habitação";
+}
 
 }); // End $(document).ready Function
